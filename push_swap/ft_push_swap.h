@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:37:32 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/15 14:49:51 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/18 21:47:38 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ void	ft_pa(t_list **src, t_list **dest);
 void	ft_pb(t_list **src, t_list **dest);
 
 void	sort(t_list **list_a, t_list **list_b);
+void	sort3(t_list **list);
+void    algo(t_list **list_a, t_list **list_b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:19:39 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/15 14:59:05 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/16 22:11:02 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,31 +38,31 @@ int	main(int argc, char *argv[])
 	t_list	*list_a;
 	t_list	*list_b;
 	t_list	*current_a;
-	// t_list	*current_b;
-	int		i;
+	t_list	*current_b;
 
 	if (argc < 2)
 	{
 		ft_printf("Error !\n");
 		return (1);
 	}
-	i = 0;
 	list_b = NULL;
 	list_a = get_input(&list_a, argv, argc - 1);
 	sort(&list_a, &list_b);
 	current_a = list_a;
+	current_b = list_b;
 	while (current_a != NULL)
 	{
-		// ft_printf("|----------------  list n.%d  ---------------|\n", i);
-		ft_printf("%d\n", current_a->data);
-		// ft_printf("next data     :%d\n", current_a->next->data);
-		// if (list_a->previous != NULL)
-			// ft_printf("previous data :%d\n", current_a->previous->data);
-			current_a = current_a->next;
-		i++;
+		ft_printf("%d", current_a->data);
+		if (current_b != NULL)
+		{
+			ft_printf(" %d\n", current_b->data);
+			current_b = current_b->next;
+		}
+		else
+			ft_printf("\n");
+		current_a = current_a->next;
 	}
-	i = 0;
-	ft_printf("_\na\n");
+	ft_printf("_ _\na b\n");
 	// ft_printf("\nafter rotate\n\n");
 	// ft_ra(&list_a);
 	// current_a = list_a;
@@ -74,9 +74,7 @@ int	main(int argc, char *argv[])
 	// 	// if (current_a->previous != NULL)
 	// 	// 	ft_printf("previous data :%d\n", current_a->previous->data);
 	// 	current_a = current_a->next;
-	// 	i++;
 	// }
-	// i = 0;
 	// ft_printf("_\na\n");
 	// ft_printf("\nafter reverse rotate\n\n");
 	// ft_rra(&list_a);
@@ -89,10 +87,8 @@ int	main(int argc, char *argv[])
 	// 	// if (current_a->previous != NULL)
 	// 	// 	ft_printf("previous data :%d\n", current_a->previous->data);
 	// 	current_a = current_a->next;
-	// 	i++;
 	// }
 	// ft_printf("_\na\n");
-	// i = 0;
 	// ft_printf("\nafter push b\n\n");
 	// ft_pb(&list_a, &list_b);
 	// ft_pb(&list_a, &list_b);
@@ -114,10 +110,8 @@ int	main(int argc, char *argv[])
 	// 	else
 	// 		ft_printf("\n");
 	// 	current_a = current_a->next;
-	// 	i++;
 	// }
 	// ft_printf("_ _\na b\n");
-	// i = 0;
 	// ft_printf("\nafter push a\n\n");
 	// ft_ss(&list_a, &list_b);
 	// current_a = list_a;
@@ -138,7 +132,6 @@ int	main(int argc, char *argv[])
 	// 	else
 	// 		ft_printf("\n");
 	// 	current_a = current_a->next;
-	// 	i++;
 	// }
 	// ft_printf("_ _\na b\n");
 	return (0);

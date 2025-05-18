@@ -7,7 +7,7 @@ INCS    = includes
 SRCS    =	ft_print_char.c ft_print_int.c ft_print_string.c ft_printf.c\
 			ft_strlen.c ft_push_swap.c ft_list.c ft_atoi.c ft_split.c\
 			ft_to_swap.c ft_to_rotate.c ft_push_list.c ft_to_reverse_rotate.c \
-			sort.c
+			sort.c algo.c
 
 SRC_BONUS =	
 
@@ -22,7 +22,7 @@ OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 ${NAME}: ${OBJ}
 	@${CC} ${CFLAGS} ${OBJ} -o ${NAME}
-	@echo "COMPILATION SUCEED"
+	@echo "${GREEN}COMPILATION SUCEED"
 
 all: ${NAME}
 
