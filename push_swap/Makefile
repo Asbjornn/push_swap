@@ -1,36 +1,39 @@
-CC        = gcc
-CFLAGS    = -Wall -Wextra -Werror -g
+CC		= gcc
+CFLAGS 	= -Wall -Wextra -Werror -g
 
-NAME    = push_swap
-INCS    = includes
+NAME	= push_swap
+INCS    = include
 
-SRCS    =	ft_print_char.c ft_print_int.c ft_print_string.c ft_printf.c\
-			ft_strlen.c ft_push_swap.c ft_list.c ft_atoi.c ft_split.c\
-			ft_to_swap.c ft_to_rotate.c ft_push_list.c ft_to_reverse_rotate.c \
-			sort.c algo.c
+SRCS    = $(wildcard utils/*.c) $(wildcard *.c)
+DIR_O	= file_o
 
 SRC_BONUS =	
 
 BLUE := \033[96m
 GREEN := \033[32m
 
-OBJ    = ${SRCS:.c=.o}
+OBJ    = $(patsubst %.c,file_o/%.o,$(SRCS))
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
-.c.o:
+all: ${NAME}
+
+$(DIR_O):
+	@mkdir -p $(DIR_O)
+	@mkdir -p $(DIR_O)/utils
+
+file_o/%.o: %.c | $(DIR_O)
 	@${CC} ${CFLAGS} -I ${INCS} -c $< -o $@
 
 ${NAME}: ${OBJ}
 	@${CC} ${CFLAGS} ${OBJ} -o ${NAME}
 	@echo "${GREEN}COMPILATION SUCEED"
 
-all: ${NAME}
 
 bonus: ${OBJ} ${OBJ_BONUS}
 	@${CC} ${CFLAGS} ${OBJ} ${OBJ_BONUS} -o ${NAME}
 
 clean:
-	@rm -f ${OBJ} ${OBJ_BONUS}
+	@rm -rf $(DIR_O)
 	@echo "ALL IS CLEAN"
 
 fclean: clean

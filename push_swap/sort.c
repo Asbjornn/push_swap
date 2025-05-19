@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:29:46 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/17 16:18:38 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/19 16:13:33 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	sort4(t_list **list_a, t_list **list_b)
 {
 	t_list	*current;
 	int		small;
-	
+
 	if (check_list((*list_a)))
 		return ;
 	small = (*list_a)->data;
@@ -73,7 +73,7 @@ static void	sort4(t_list **list_a, t_list **list_b)
 		ft_rra(list_a);
 	else
 		while ((*list_a)->data != small)
-			ft_ra(list_a);	
+			ft_ra(list_a);
 	ft_pb(list_a, list_b);
 	sort3(list_a);
 	ft_pa(list_b, list_a);
@@ -83,7 +83,7 @@ static void	sort5(t_list **list_a, t_list **list_b)
 {
 	t_list	*current;
 	int		small;
-	
+
 	if (check_list((*list_a)))
 		return ;
 	small = (*list_a)->data;
@@ -100,7 +100,7 @@ static void	sort5(t_list **list_a, t_list **list_b)
 			ft_rra(list_a);
 	else
 		while ((*list_a)->data != small)
-			ft_ra(list_a);	
+			ft_ra(list_a);
 	ft_pb(list_a, list_b);
 	sort4(list_a, list_b);
 	ft_pa(list_b, list_a);
@@ -111,12 +111,20 @@ void	sort(t_list **list_a, t_list **list_b)
 	int		index;
 
 	index = ft_lstsize((*list_a));
-	if (index == 3)
+	ft_printf("index = %d\n", index);
+	if (index == 2)
+	{
+		if ((*list_a)->data > (*list_a)->next->data)
+			ft_sa(list_a);
+		return ;
+	}
+	else if (index == 3)
 		sort3(list_a);
 	else if (index == 4)
 		sort4(list_a, list_b);
 	else if (index == 5)
 		sort5(list_a, list_b);
 	else
-		algo(list_a, list_b);
+		radix_bitwise(list_a, list_b);
+		//chunk_sort(list_a, list_b);
 }

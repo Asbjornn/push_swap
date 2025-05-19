@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:49:40 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/15 14:49:13 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/19 15:56:15 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_new_node(int data)
 	if (!current)
 		return (NULL);
 	current->data = data;
+	current->index = 0;
 	current->next = NULL;
 	current->previous = NULL;
 	return (current);
