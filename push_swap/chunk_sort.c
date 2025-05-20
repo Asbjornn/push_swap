@@ -6,13 +6,13 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 14:01:59 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/19 15:49:32 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/20 13:25:57 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-static int	max_number(t_list *list)
+/*static int	max_number(t_list *list)
 {
 	int	max;
 	int	limit;
@@ -32,9 +32,9 @@ static int	max_number(t_list *list)
 		limit++;
 	}
 	return (limit);
-}
+}*/
 
-void	chunk_sort(t_list **list_a, t_list **list_b)
+/*void	chunk_sort(t_list **list_a, t_list **list_b)
 {
 	int	max;
 	int	temp;
@@ -62,4 +62,34 @@ void	chunk_sort(t_list **list_a, t_list **list_b)
 		h *= 10;
 		i++;
 	}
-}
+}*/
+
+// static int	is_sorted(t_list *list)
+// {
+// 	if (list->index != 0)
+// 		return (0);
+// 	while (list->next)
+// 	{
+// 		if ((list->index + 1) != list->next->index)
+// 			return (0);
+// 		list = list->next;
+// 	}
+// 	return (1);
+// }
+
+// void	chunk_sort100(t_list **list_a, t_list **list_b)
+// {
+// 	int	middle;
+// 	int	chunk_size;
+// 	int	chunk;
+// 	int	i;
+
+// 	middle = ft_lstsize((*list_a)) / 2;
+// 	chunk_size = (ft_lstsize((*list_a)) / 5);
+// 	i = 0;
+// 	while (!is_sorted((*list_a)))
+// 	{
+// 		chunk = i * chunk_size;
+// 		i++;
+// 	}
+// }

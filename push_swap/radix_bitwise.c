@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 19:51:22 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/20 10:33:46 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/20 15:23:56 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	is_sorted(t_list *list)
 	return (1);
 }
 
-/*tatic int	max_bit(t_list *list)
+static int	max_bit(t_list *list)
 {
 	int	max;
 	int	limit;
@@ -45,19 +45,19 @@ static int	is_sorted(t_list *list)
 		max = max >> 1;
 	}
 	return (limit);
-}*/
+}
 
 void	radix_bitwise(t_list **list_a, t_list **list_b)
 {
-	//int	limit;
+	int	limit;
 	int	size;
 	int	j;
 	int	i;
 
-	//limit = max_bit((*list_a));
+	limit = max_bit((*list_a));
 	i = 0;
 	size = ft_lstsize((*list_a));
-	while (i < size)
+	while (i < limit)
 	{
 		if (is_sorted((*list_a)))
 			break ;
@@ -72,7 +72,7 @@ void	radix_bitwise(t_list **list_a, t_list **list_b)
 			j++;
 		}
 		while ((*list_b) != NULL)
-				ft_pa(list_b, list_a);
+			ft_pa(list_b, list_a);
 		i++;
 	}
 }

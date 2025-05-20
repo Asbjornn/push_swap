@@ -6,50 +6,50 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:19:39 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/19 23:06:56 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/20 15:26:07 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 #include "ft_printf.h"
 
-static void	display_list(t_list *list_a, t_list *list_b)
-{
-	while (list_a != NULL)
-	{
-		ft_printf("index :%d      %d", list_a->index, list_a->data);
-		if (list_b != NULL)
-		{
-			ft_printf(" %d\n", list_b->data);
-			list_b = list_b->next;
-		}
-		else
-			ft_printf("\n");
-		list_a = list_a->next;
-	}
-	ft_printf("_ _\na b\n");
-}
+// static void	display_list(t_list *list_a, t_list *list_b)
+// {
+// 	while (list_a != NULL)
+// 	{
+// 		ft_printf("index :%d      %d", list_a->index, list_a->data);
+// 		if (list_b != NULL)
+// 		{
+// 			ft_printf(" %d\n", list_b->data);
+// 			list_b = list_b->next;
+// 		}
+// 		else
+// 			ft_printf("\n");
+// 		list_a = list_a->next;
+// 	}
+// 	ft_printf("_ _\na b\n");
+// }
 
 static void	set_index(t_list **list)
 {
- 	t_list	*current;
+	t_list	*current;
 	t_list	*current2;
 	int		index;
 
 	current = (*list);
- 	while (current != NULL)
- 	{
+	while (current != NULL)
+	{
 		index = 0;
- 		current2 = (*list);
- 		while (current2)
- 		{
- 			if (current2->data < current->data)
- 				index++;
- 			current2 = current2->next;
- 		}
+		current2 = (*list);
+		while (current2)
+		{
+			if (current2->data < current->data)
+				index++;
+			current2 = current2->next;
+		}
 		current->index = index;
- 		current = current->next;
- 	}
+		current = current->next;
+	}
 }
 
 static t_list	*get_input(t_list **list, char *tab[], int i)
@@ -86,6 +86,6 @@ int	main(int argc, char *argv[])
 	set_index(&list_a);
 	list_b = NULL;
 	sort(&list_a, &list_b);
-	display_list(list_a, list_b);
+	//display_list(list_a, list_b);
 	return (0);
 }

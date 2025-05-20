@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:29:46 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/19 16:13:33 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/20 16:06:53 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ void	sort(t_list **list_a, t_list **list_b)
 	else if (index == 5)
 		sort5(list_a, list_b);
 	else
-		radix_bitwise(list_a, list_b);
+		wheel_sort(list_a, list_b);
+		//radix_bitwise(list_a, list_b);
 		//chunk_sort(list_a, list_b);
 }
