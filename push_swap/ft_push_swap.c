@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:19:39 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/19 16:13:49 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/19 23:06:56 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	display_list(t_list *list_a, t_list *list_b)
 {
 	while (list_a != NULL)
 	{
-		ft_printf("%d", list_a->data);
+		ft_printf("index :%d      %d", list_a->index, list_a->data);
 		if (list_b != NULL)
 		{
 			ft_printf(" %d\n", list_b->data);
@@ -30,26 +30,27 @@ static void	display_list(t_list *list_a, t_list *list_b)
 	ft_printf("_ _\na b\n");
 }
 
-// static int	*set_index(int size, t_list **list)
-// {
-// 	t_list	*current;
-// 	int		*tab;
-// 	int		i;
+static void	set_index(t_list **list)
+{
+ 	t_list	*current;
+	t_list	*current2;
+	int		index;
 
-// 	tab = malloc((sizeof(char)) * size);
-// 	i = 0;
-// 	while (i < size)
-// 	{
-// 		current = (*list);
-// 		while (current != NULL)
-// 		{
-// 			if (tab[i] >= current->data)
-// 				tab[i] = current->data;
-// 			current = current->next;
-// 		}
-// 		i++;
-// 	}
-// }
+	current = (*list);
+ 	while (current != NULL)
+ 	{
+		index = 0;
+ 		current2 = (*list);
+ 		while (current2)
+ 		{
+ 			if (current2->data < current->data)
+ 				index++;
+ 			current2 = current2->next;
+ 		}
+		current->index = index;
+ 		current = current->next;
+ 	}
+}
 
 static t_list	*get_input(t_list **list, char *tab[], int i)
 {
@@ -81,8 +82,9 @@ int	main(int argc, char *argv[])
 		ft_printf("Error !\n");
 		return (1);
 	}
-	list_b = NULL;
 	list_a = get_input(&list_a, argv, argc - 1);
+	set_index(&list_a);
+	list_b = NULL;
 	sort(&list_a, &list_b);
 	display_list(list_a, list_b);
 	return (0);
