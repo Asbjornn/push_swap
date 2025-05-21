@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:37:32 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/20 13:25:09 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/21 15:52:34 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_rb(t_list **list_b);
 void	ft_rr(t_list **list_a, t_list **list_b);
 
 void	ft_rra(t_list **list_a);
-void	ft_rrb(t_list **list_a);
+void	ft_rrb(t_list **list_b);
 void	ft_rrr(t_list **list_a, t_list **list_b);
 
 void	ft_pa(t_list **src, t_list **dest);
@@ -52,5 +52,7 @@ void	sort3(t_list **list);
 void	radix_bitwise(t_list **list_a, t_list **list_b);
 //void	chunk_sort(t_list **list_a, t_list **list_b);
 void	wheel_sort(t_list **list_a, t_list **list_b);
+
+int	handle_error(char **tab);
 
 #endif

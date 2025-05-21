@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:19:39 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/20 15:26:07 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/21 15:51:56 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,18 @@
 // 	}
 // 	ft_printf("_ _\na b\n");
 // }
+
+static void	free_list(t_list **list_a)
+{
+	t_list	*current;
+
+	while ((*list_a))
+	{
+		current = (*list_a);
+		(*list_a) = (*list_a)->next;
+		free(current);
+	}
+}
 
 static void	set_index(t_list **list)
 {
@@ -77,9 +89,9 @@ int	main(int argc, char *argv[])
 	t_list	*list_a;
 	t_list	*list_b;
 
-	if (argc < 2)
+	if (argc < 2 || !handle_error(argv))
 	{
-		ft_printf("Error !\n");
+		ft_printf("Error\n");
 		return (1);
 	}
 	list_a = get_input(&list_a, argv, argc - 1);
@@ -87,5 +99,6 @@ int	main(int argc, char *argv[])
 	list_b = NULL;
 	sort(&list_a, &list_b);
 	//display_list(list_a, list_b);
+	free_list(&list_a);
 	return (0);
 }

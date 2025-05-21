@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 19:51:22 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/20 15:23:56 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/21 15:59:58 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ static int	max_bit(t_list *list)
 			max = list->index;
 		list = list->next;
 	}
-	ft_printf("max%d\n", max);
 	while (max > 0)
 	{
 		limit++;
@@ -61,7 +60,6 @@ void	radix_bitwise(t_list **list_a, t_list **list_b)
 	{
 		if (is_sorted((*list_a)))
 			break ;
-		ft_printf("boucle : %d\n", i);
 		j = 0;
 		while (j < size)
 		{
@@ -81,5 +79,5 @@ void	radix_bitwise(t_list **list_a, t_list **list_b)
 RADIX BITWISE
 Si le bit est a 1, je ra
 Si le bit est a 0, je pb
-puis je pa 
+puis je pa tout le reste
 */
