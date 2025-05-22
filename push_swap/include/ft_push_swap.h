@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:37:32 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/21 15:52:34 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/21 21:29:40 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PUSH_SWAP_H
 
 # include <stdlib.h>
+# include <limits.h>
 # include "ft_printf.h"
 
 typedef struct s_list
@@ -24,7 +25,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-int		ft_atoi(const char *nptr);
+long int	ft_atoi(const char *nptr);
 char	**ft_split(char const *s, char c);
 t_list	*ft_new_node(int data);
 t_list	*ft_lstlast(t_list *lst);
@@ -53,6 +54,7 @@ void	radix_bitwise(t_list **list_a, t_list **list_b);
 //void	chunk_sort(t_list **list_a, t_list **list_b);
 void	wheel_sort(t_list **list_a, t_list **list_b);
 
-int	handle_error(char **tab);
+int	handle_error(int argc, char **tab);
+void	ft_putstr_fd(char *s, int fd);
 
 #endif

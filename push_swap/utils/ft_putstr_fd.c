@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 12:52:49 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/22 09:13:00 by gcauchy          ###   ########.fr       */
+/*   Created: 2025/05/21 21:28:45 by gcauchy           #+#    #+#             */
+/*   Updated: 2025/05/21 21:29:25 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include <ft_push_swap.h>
 
-long int	ft_atoi(const char *nptr)
+void	ft_putstr_fd(char *s, int fd)
 {
-	long int	result;
-	long int	sign;
-	long int	i;
+	int	i;
 
-	result = 0;
-	sign = 1;
 	i = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	while (s[i])
 	{
-		if (nptr[i] == '-')
-			sign *= -1;
+		write(fd, &s[i], 1);
 		i++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		result *= 10;
-		result += nptr[i] - '0';
-		i++;
-	}
-	return (result * sign);
 }

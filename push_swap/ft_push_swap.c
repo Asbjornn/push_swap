@@ -6,29 +6,29 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:19:39 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/21 15:51:56 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/22 09:06:02 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 #include "ft_printf.h"
 
-// static void	display_list(t_list *list_a, t_list *list_b)
-// {
-// 	while (list_a != NULL)
-// 	{
-// 		ft_printf("index :%d      %d", list_a->index, list_a->data);
-// 		if (list_b != NULL)
-// 		{
-// 			ft_printf(" %d\n", list_b->data);
-// 			list_b = list_b->next;
-// 		}
-// 		else
-// 			ft_printf("\n");
-// 		list_a = list_a->next;
-// 	}
-// 	ft_printf("_ _\na b\n");
-// }
+static void	display_list(t_list *list_a, t_list *list_b)
+{
+	while (list_a != NULL)
+	{
+		ft_printf("index :%d      %d", list_a->index, list_a->data);
+		if (list_b != NULL)
+		{
+			ft_printf(" %d\n", list_b->data);
+			list_b = list_b->next;
+		}
+		else
+			ft_printf("\n");
+		list_a = list_a->next;
+	}
+	ft_printf("_ _\na b\n");
+}
 
 static void	free_list(t_list **list_a)
 {
@@ -89,16 +89,16 @@ int	main(int argc, char *argv[])
 	t_list	*list_a;
 	t_list	*list_b;
 
-	if (argc < 2 || !handle_error(argv))
+	if (argc < 2 || !handle_error(argc, argv))
 	{
-		ft_printf("Error\n");
-		return (1);
+		ft_putstr_fd("Error\n", 2);
+		return (0);
 	}
 	list_a = get_input(&list_a, argv, argc - 1);
 	set_index(&list_a);
 	list_b = NULL;
 	sort(&list_a, &list_b);
-	//display_list(list_a, list_b);
+	display_list(list_a, list_b);
 	free_list(&list_a);
 	return (0);
 }
