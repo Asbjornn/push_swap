@@ -6,40 +6,52 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:19:39 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/22 09:06:02 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/22 15:27:00 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 #include "ft_printf.h"
 
-static void	display_list(t_list *list_a, t_list *list_b)
-{
-	while (list_a != NULL)
-	{
-		ft_printf("index :%d      %d", list_a->index, list_a->data);
-		if (list_b != NULL)
-		{
-			ft_printf(" %d\n", list_b->data);
-			list_b = list_b->next;
-		}
-		else
-			ft_printf("\n");
-		list_a = list_a->next;
-	}
-	ft_printf("_ _\na b\n");
-}
+// static void	display_list(t_list *list_a, t_list *list_b)
+// {
+// 	while (list_a != NULL)
+// 	{
+// 		ft_printf("index :%d      %d", list_a->index, list_a->data);
+// 		if (list_b != NULL)
+// 		{
+// 			ft_printf(" %d\n", list_b->data);
+// 			list_b = list_b->next;
+// 		}
+// 		else
+// 			ft_printf("\n");
+// 		list_a = list_a->next;
+// 	}
+// 	ft_printf("_ _\na b\n");
+// }
 
-static void	free_list(t_list **list_a)
+static t_list	*split_it(t_list **list, char **argv)
 {
 	t_list	*current;
+	char	**tmp_array;
+	int		i;
+	int		data;
 
-	while ((*list_a))
+	tmp_array = ft_split(argv[1], ' ');
+	data = ft_atoi(tmp_array[0]);
+	*list = ft_new_node(data);
+	current = *list;
+	i = 1;
+	while (tmp_array[i])
 	{
-		current = (*list_a);
-		(*list_a) = (*list_a)->next;
-		free(current);
+		data = ft_atoi(tmp_array[i]);
+		current = ft_new_node(data);
+		ft_lstadd_back(list, current);
+		i++;
 	}
+	current->next = NULL;
+	free_all(tmp_array);
+	return (*list);
 }
 
 static void	set_index(t_list **list)
@@ -94,11 +106,14 @@ int	main(int argc, char *argv[])
 		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
-	list_a = get_input(&list_a, argv, argc - 1);
+	if (argc == 2)
+		list_a = split_it(&list_a, argv);
+	else
+		list_a = get_input(&list_a, argv, argc - 1);
 	set_index(&list_a);
 	list_b = NULL;
 	sort(&list_a, &list_b);
-	display_list(list_a, list_b);
+	// display_list(list_a, list_b);
 	free_list(&list_a);
 	return (0);
 }

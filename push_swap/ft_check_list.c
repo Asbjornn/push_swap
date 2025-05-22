@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_check_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 21:28:45 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/22 11:43:36 by gcauchy          ###   ########.fr       */
+/*   Created: 2025/05/22 11:33:50 by gcauchy           #+#    #+#             */
+/*   Updated: 2025/05/22 11:37:21 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_push_swap.h>
+#include "ft_push_swap.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	check_list(t_list *list)
+{
+	int	i;
+
+	i = list->data;
+	while (list != NULL)
+	{
+		if (i != list->data)
+			return (0);
+		list = list->next;
+	}
+	return (1);
+}
+
+int	is_list_sorted(t_list *list)
 {
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (list)
 	{
-		write(fd, &s[i], 1);
+		if (list->index != i)
+			return (0);
 		i++;
+		list = list->next;
 	}
+	return (1);
 }

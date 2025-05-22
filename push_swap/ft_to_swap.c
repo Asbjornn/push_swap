@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 11:14:27 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/15 13:55:34 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/22 11:42:41 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,6 @@ static	void	swap(t_list **list)
 	temp = (*list)->next->data;
 	(*list)->next->data = (*list)->data;
 	(*list)->data = temp;
-
-	// t_list	*current;
-	
-	// current = (*list)->next;
-	// (*list)->next = current->next;
-	// (*list)->next->previous = (*list);
-	// current->next = (*list);
-	// current->previous = NULL;
-	// (*list) = current;
 }
 
 void	ft_sa(t_list **list_a)

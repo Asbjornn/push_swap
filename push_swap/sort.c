@@ -6,25 +6,11 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:29:46 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/21 14:48:08 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/22 11:40:51 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
-static int	check_list(t_list *list)
-{
-	int	i;
-
-	i = list->data;
-	while (list != NULL)
-	{
-		if (i != list->data)
-			return (0);
-		list = list->next;
-	}
-	return (1);
-}
 
 void	sort3(t_list **list)
 {
@@ -108,10 +94,11 @@ static void	sort5(t_list **list_a, t_list **list_b)
 
 void	sort(t_list **list_a, t_list **list_b)
 {
-	int		index;
+	int	index;
 
+	if (is_list_sorted((*list_a)))
+		return ;
 	index = ft_lstsize((*list_a));
-	//ft_printf("index = %d\n", index);
 	if (index == 2)
 	{
 		if ((*list_a)->data > (*list_a)->next->data)

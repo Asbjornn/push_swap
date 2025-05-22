@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 21:28:45 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/22 11:43:36 by gcauchy          ###   ########.fr       */
+/*   Created: 2025/05/22 10:43:23 by gcauchy           #+#    #+#             */
+/*   Updated: 2025/05/22 10:44:09 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_push_swap.h>
+#include "ft_push_swap.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	free_all(char **tab)
 {
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (tab[i])
 	{
-		write(fd, &s[i], 1);
+		free(tab[i]);
 		i++;
+	}
+	free(tab);
+}
+
+void	free_list(t_list **list_a)
+{
+	t_list	*current;
+
+	while ((*list_a))
+	{
+		current = (*list_a);
+		(*list_a) = (*list_a)->next;
+		free(current);
 	}
 }

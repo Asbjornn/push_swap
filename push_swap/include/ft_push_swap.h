@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:37:32 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/21 21:29:40 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/22 11:36:12 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,35 +26,40 @@ typedef struct s_list
 }	t_list;
 
 long int	ft_atoi(const char *nptr);
-char	**ft_split(char const *s, char c);
-t_list	*ft_new_node(int data);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-int		ft_lstsize(t_list *list);
+char		**ft_split(char const *s, char c);
+t_list		*ft_new_node(int data);
+t_list		*ft_lstlast(t_list *lst);
+void		ft_lstadd_front(t_list **lst, t_list *new);
+void		ft_lstadd_back(t_list **lst, t_list *new);
+int			ft_lstsize(t_list *list);
 
-void	ft_sa(t_list **list_a);
-void	ft_sb(t_list **list_b);
-void	ft_ss(t_list **list_a, t_list **list_b);
+void		ft_sa(t_list **list_a);
+void		ft_sb(t_list **list_b);
+void		ft_ss(t_list **list_a, t_list **list_b);
 
-void	ft_ra(t_list **list_a);
-void	ft_rb(t_list **list_b);
-void	ft_rr(t_list **list_a, t_list **list_b);
+void		ft_ra(t_list **list_a);
+void		ft_rb(t_list **list_b);
+void		ft_rr(t_list **list_a, t_list **list_b);
 
-void	ft_rra(t_list **list_a);
-void	ft_rrb(t_list **list_b);
-void	ft_rrr(t_list **list_a, t_list **list_b);
+void		ft_rra(t_list **list_a);
+void		ft_rrb(t_list **list_b);
+void		ft_rrr(t_list **list_a, t_list **list_b);
 
-void	ft_pa(t_list **src, t_list **dest);
-void	ft_pb(t_list **src, t_list **dest);
+void		ft_pa(t_list **src, t_list **dest);
+void		ft_pb(t_list **src, t_list **dest);
 
-void	sort(t_list **list_a, t_list **list_b);
-void	sort3(t_list **list);
-void	radix_bitwise(t_list **list_a, t_list **list_b);
-//void	chunk_sort(t_list **list_a, t_list **list_b);
-void	wheel_sort(t_list **list_a, t_list **list_b);
+void		sort(t_list **list_a, t_list **list_b);
+void		sort3(t_list **list);
+void		radix_bitwise(t_list **list_a, t_list **list_b);
+void		wheel_sort(t_list **list_a, t_list **list_b);
+//void		chunk_sort(t_list **list_a, t_list **list_b);
 
-int	handle_error(int argc, char **tab);
-void	ft_putstr_fd(char *s, int fd);
+int			handle_error(int argc, char **tab);
+void		ft_putstr_fd(char *s, int fd);
+void		free_all(char **tab);
+void		free_list(t_list **list_a);
+
+int			check_list(t_list *list);
+int			is_list_sorted(t_list *list);
 
 #endif

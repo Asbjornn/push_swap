@@ -9,8 +9,8 @@ DIR_O	= file_o
 
 SRC_BONUS =	
 
-BLUE := \033[96m
-GREEN := \033[32m
+BLUE=\033[0;94m
+GREEN=\033[1;92m
 
 OBJ    = $(patsubst %.c,file_o/%.o,$(SRCS))
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
@@ -26,7 +26,7 @@ file_o/%.o: %.c | $(DIR_O)
 
 ${NAME}: ${OBJ}
 	@${CC} ${CFLAGS} ${OBJ} -o ${NAME}
-	@echo "${GREEN}COMPILATION SUCEED"
+	@echo -e "${GREEN}COMPILATION SUCEED"
 
 
 bonus: ${OBJ} ${OBJ_BONUS}
@@ -34,10 +34,10 @@ bonus: ${OBJ} ${OBJ_BONUS}
 
 clean:
 	@rm -rf $(DIR_O)
-	@echo "ALL IS CLEAN"
+	@echo -e "${GREEN}ALL IS CLEAN"
 
 fclean: clean
-	rm -f ${NAME}
+	@rm -f ${NAME}
 
 re: fclean all
 
