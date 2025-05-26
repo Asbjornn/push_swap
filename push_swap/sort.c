@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:29:46 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/26 09:30:04 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/26 14:55:04 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,4 @@ void	sort(t_list **list_a, t_list **list_b)
 		chunk_sort(list_a, list_b);
 	else
 		radix_bitwise(list_a, list_b);
-		// ultra_bucket_radix(list_a, list_b);
-		//wheel_sort(list_a, list_b);
-		//chunk_sort(list_a, list_b);
 }

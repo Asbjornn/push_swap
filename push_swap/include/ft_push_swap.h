@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:37:32 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/26 09:30:48 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/26 14:54:02 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,10 @@ void		ft_pb(t_list **src, t_list **dest);
 void		sort(t_list **list_a, t_list **list_b);
 void		radix_bitwise(t_list **list_a, t_list **list_b);
 void		chunk_sort(t_list **list_a, t_list **list_b);
-// void		ultra_bucket_radix(t_list **list_a, t_list **list_b);
-// void    	push_bucket(t_list **list_a, t_list ** list_b, int bucket);
-// void		wheel_sort(t_list **list_a, t_list **list_b);
 
 int			handle_error(int argc, char **tab);
 void		ft_putstr_fd(char *s, int fd);
 void		free_all(char **tab);
 void		free_list(t_list **list_a);
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 15:52:02 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/22 11:30:26 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/26 14:55:32 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,19 +82,3 @@ int	handle_error(int argc, char **argv)
 		free_all(temp_argv);
 	return (1);
 }
-/*
-
-COURAGE GABIN BEBOU TU PEUX LE FAIRE -xXcriprou0CroupaXx
-
-STOCKER DANS UN TEMP LE TABLO
-SI ARGC == 2, TABLO = -> SPLIT
-SINON PASSER A ARGV + 1 (apres a.out)
-BOUCLER SUR L'ARRAY
-{
-	atoi de TABLO[i]
-	si pas digit
-	si pas double
-	si pas limite
-}
-free TABLO si argc == 2
-*/
