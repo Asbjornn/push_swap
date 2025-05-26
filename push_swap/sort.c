@@ -6,21 +6,34 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:29:46 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/22 11:40:51 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/26 09:30:04 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	sort3(t_list **list)
+static int	is_list_sorted(t_list *list)
+{
+	int	i;
+
+	i = 0;
+	while (list)
+	{
+		if (list->index != i)
+			return (0);
+		i++;
+		list = list->next;
+	}
+	return (1);
+}
+
+static void	sort3(t_list **list)
 {
 	t_list	*second;
 	t_list	*third;
 
 	second = (*list)->next;
 	third = second->next;
-	if (check_list((*list)))
-		return ;
 	if ((*list)->data > second->data && (*list)->data <= third->data)
 		ft_sa(list);
 	else if ((*list)->data > second->data && second->data > third->data)
@@ -45,8 +58,6 @@ static void	sort4(t_list **list_a, t_list **list_b)
 	t_list	*current;
 	int		small;
 
-	if (check_list((*list_a)))
-		return ;
 	small = (*list_a)->data;
 	current = (*list_a);
 	while (current != NULL)
@@ -70,8 +81,6 @@ static void	sort5(t_list **list_a, t_list **list_b)
 	t_list	*current;
 	int		small;
 
-	if (check_list((*list_a)))
-		return ;
 	small = (*list_a)->data;
 	current = (*list_a);
 	while (current != NULL)
@@ -94,25 +103,24 @@ static void	sort5(t_list **list_a, t_list **list_b)
 
 void	sort(t_list **list_a, t_list **list_b)
 {
-	int	index;
+	int	size;
 
 	if (is_list_sorted((*list_a)))
 		return ;
-	index = ft_lstsize((*list_a));
-	if (index == 2)
-	{
-		if ((*list_a)->data > (*list_a)->next->data)
-			ft_sa(list_a);
-		return ;
-	}
-	else if (index == 3)
+	size = ft_lstsize((*list_a));
+	if (size == 2)
+		ft_sa(list_a);
+	else if (size == 3)
 		sort3(list_a);
-	else if (index == 4)
+	else if (size == 4)
 		sort4(list_a, list_b);
-	else if (index == 5)
+	else if (size == 5)
 		sort5(list_a, list_b);
+	else if (size <= 100)
+		chunk_sort(list_a, list_b);
 	else
 		radix_bitwise(list_a, list_b);
+		// ultra_bucket_radix(list_a, list_b);
 		//wheel_sort(list_a, list_b);
 		//chunk_sort(list_a, list_b);
 }

@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:37:32 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/22 11:36:12 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/26 09:30:48 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_list
 
 long int	ft_atoi(const char *nptr);
 char		**ft_split(char const *s, char c);
+
 t_list		*ft_new_node(int data);
 t_list		*ft_lstlast(t_list *lst);
 void		ft_lstadd_front(t_list **lst, t_list *new);
@@ -49,17 +50,16 @@ void		ft_pa(t_list **src, t_list **dest);
 void		ft_pb(t_list **src, t_list **dest);
 
 void		sort(t_list **list_a, t_list **list_b);
-void		sort3(t_list **list);
 void		radix_bitwise(t_list **list_a, t_list **list_b);
-void		wheel_sort(t_list **list_a, t_list **list_b);
-//void		chunk_sort(t_list **list_a, t_list **list_b);
+void		chunk_sort(t_list **list_a, t_list **list_b);
+// void		ultra_bucket_radix(t_list **list_a, t_list **list_b);
+// void    	push_bucket(t_list **list_a, t_list ** list_b, int bucket);
+// void		wheel_sort(t_list **list_a, t_list **list_b);
 
 int			handle_error(int argc, char **tab);
 void		ft_putstr_fd(char *s, int fd);
 void		free_all(char **tab);
 void		free_list(t_list **list_a);
 
-int			check_list(t_list *list);
-int			is_list_sorted(t_list *list);
 
 #endif

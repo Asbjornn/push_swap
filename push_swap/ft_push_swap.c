@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:19:39 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/22 15:27:00 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/26 09:25:37 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,17 @@
 // 		ft_printf("index :%d      %d", list_a->index, list_a->data);
 // 		if (list_b != NULL)
 // 		{
-// 			ft_printf(" %d\n", list_b->data);
+// 			ft_printf(" list_b :%d\n", list_b->data);
 // 			list_b = list_b->next;
 // 		}
 // 		else
 // 			ft_printf("\n");
 // 		list_a = list_a->next;
+// 	}
+// 	while (list_b != NULL)
+// 	{
+// 		ft_printf(" list_b :%d\n", list_b->data);
+// 		list_b = list_b->next;
 // 	}
 // 	ft_printf("_ _\na b\n");
 // }

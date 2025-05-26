@@ -6,90 +6,143 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 14:01:59 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/20 13:25:57 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/26 09:26:46 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-/*static int	max_number(t_list *list)
-{
-	int	max;
-	int	limit;
+// static int	find_in_chunk(t_list *list_a, int min, int max)
+// {
+// 	int	pos;
 
-	max = 0;
-	limit = 0;
-	while (list != NULL)
+// 	pos = 0;
+// 	while (list_a)
+// 	{
+// 		if (list_a->index >= min && list_a->index <= max)
+// 			return (pos);
+// 		pos ++;
+// 		list_a = list_a->next;
+// 	}
+// 	return (-1);
+// }
+
+static void	wheel_sort(t_list **list_a, t_list **list_b, int min, int max)
+{
+	// int	pos;
+	// int	half_size;
+	int	j;
+
+	j = min;
+	while (j <= max)
 	{
-		if (max < list->data)
-			max = list->data;
+		// pos = find_in_chunk((*list_a), min, max);
+		// half_size = ft_lstsize((*list_a)) / 2;
+		// if (!(*list_a)->next || pos == -1)
+		// 	break ;
+		while ((*list_a)->index > max || (*list_a)->index < min/* && (*list_a)->index != j + 1*/)
+		{
+			// if (pos >= half_size)
+			// 	ft_rra(list_a);
+			// else
+				ft_ra(list_a);
+		}
+		ft_pb(list_a, list_b);
+		/*if ((*list_a)->index == j)
+			ft_pb(list_a, list_b);
+		else
+		{
+			ft_pb(list_a, list_b);
+			while ((*list_a)->index != j)
+			{
+				if (pos >= half_size)
+					ft_rra(list_a);
+				else
+					ft_ra(list_a);
+			}
+			ft_pb(list_a, list_b);
+			ft_sb(list_b);
+			j++;
+		}*/
+		j++;
+	}
+}
+
+static int	find(t_list *list, int i)
+{
+	int	pos;
+
+	pos = 0;
+	while (list)
+	{
+		if (list->index == i)
+			return (pos);
+		pos ++;
 		list = list->next;
 	}
-	ft_printf("max%d\n", max);
-	while (max > 0)
-	{
-		max /= 10;
-		limit++;
-	}
-	return (limit);
-}*/
+	return (-1);
+}
 
-/*void	chunk_sort(t_list **list_a, t_list **list_b)
+static void	wheel_sort_b(t_list **list_a, t_list **list_b)
+{
+	int	pos;
+	int	half_size;
+	int	i;
+
+	i = ft_lstsize((*list_b)) - 1;
+	while ((*list_b))
+	{
+		pos = find((*list_b), i);
+		half_size = ft_lstsize((*list_b)) / 2;
+		while ((*list_b)->index != i && (*list_b)->index != i - 1)
+		{
+			if (pos >= half_size)
+				ft_rrb(list_b);
+			else
+				ft_rb(list_b);
+		}
+		if ((*list_b)->index == i)
+			ft_pa(list_b, list_a);
+		else
+		{
+			ft_pa(list_b, list_a);
+			pos = find((*list_b), i);
+			half_size = ft_lstsize((*list_b)) / 2;
+			while ((*list_b)->index != i)
+			{
+				if (pos >= half_size)
+					ft_rrb(list_b);
+				else
+					ft_rb(list_b);
+			}
+			ft_pa(list_b, list_a);
+			ft_sa(list_a);
+			i--;
+		}
+		i--;
+	}
+}
+
+void	chunk_sort(t_list **list_a, t_list **list_b)
 {
 	int	max;
-	int	temp;
+	int	min;
 	int	i;
-	int	j;
-	int	h;
+	int	nbr_chunk;
+	int	size;
 
 	i = 0;
-	h = 10;
-	max = max_number((*list_a));
-	while (i < max)
+	size = ft_lstsize((*list_a));
+	nbr_chunk = 5;
+	while (i < nbr_chunk)
 	{
-		j = 0;
-		while (j < 10)
-		{
-			temp = (*list_a)->data;
-			if (temp % h)
-				ft_pb(list_a, list_b);
-			else
-				ft_ra(list_a);
-			j++;
-		}
-		while ((*list_b))
-			ft_pa(list_b, list_a);
-		h *= 10;
+		min = i * (size / nbr_chunk);
+    	if (i == nbr_chunk - 1)
+        	max = size - 1;
+    	else
+        	max = min + (size / nbr_chunk) - 1;
+		wheel_sort(list_a, list_b, min, max);
 		i++;
 	}
-}*/
-
-// static int	is_sorted(t_list *list)
-// {
-// 	if (list->index != 0)
-// 		return (0);
-// 	while (list->next)
-// 	{
-// 		if ((list->index + 1) != list->next->index)
-// 			return (0);
-// 		list = list->next;
-// 	}
-// 	return (1);
-// }
-
-// void	chunk_sort100(t_list **list_a, t_list **list_b)
-// {
-// 	int	middle;
-// 	int	chunk_size;
-// 	int	chunk;
-// 	int	i;
-
-// 	middle = ft_lstsize((*list_a)) / 2;
-// 	chunk_size = (ft_lstsize((*list_a)) / 5);
-// 	i = 0;
-// 	while (!is_sorted((*list_a)))
-// 	{
-// 		chunk = i * chunk_size;
-// 		i++;
-// 	}
-// }
+	wheel_sort_b(list_a, list_b);
+}
