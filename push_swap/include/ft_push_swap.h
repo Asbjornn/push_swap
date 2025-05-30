@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:37:32 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/26 14:54:02 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/30 15:55:22 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <limits.h>
-# include "ft_printf.h"
+# include "../libft/includes/ft_printf.h"
 
 typedef struct s_list
 {
@@ -25,7 +25,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-long int	ft_atoi(const char *nptr);
+long int	ft_atol(const char *nptr);
 char		**ft_split(char const *s, char c);
 
 t_list		*ft_new_node(int data);

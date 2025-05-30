@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 15:52:02 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/26 14:55:32 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/30 15:55:39 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	check_double(char **tab)
 		j = 0;
 		while (tab[j])
 		{
-			if (ft_atoi(tab[i]) == ft_atoi(tab[j]) && i != j)
+			if (ft_atol(tab[i]) == ft_atol(tab[j]) && i != j)
 				return (1);
 			j++;
 		}
@@ -71,7 +71,7 @@ int	handle_error(int argc, char **argv)
 	{
 		if (!check_digit(temp_argv[i]))
 			return (0);
-		temp = ft_atoi(temp_argv[i]);
+		temp = ft_atol(temp_argv[i]);
 		if (temp > INT_MAX || temp < INT_MIN)
 			return (0);
 		i++;

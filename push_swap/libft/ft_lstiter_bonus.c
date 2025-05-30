@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 12:52:49 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/22 09:13:00 by gcauchy          ###   ########.fr       */
+/*   Created: 2025/04/21 12:39:44 by gcauchy           #+#    #+#             */
+/*   Updated: 2025/04/21 12:39:49 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "libft.h"
 
-long int	ft_atoi(const char *nptr)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	long int	result;
-	long int	sign;
-	long int	i;
-
-	result = 0;
-	sign = 1;
-	i = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	if (!lst || !f)
+		return ;
+	while (lst)
 	{
-		if (nptr[i] == '-')
-			sign *= -1;
-		i++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		result *= 10;
-		result += nptr[i] - '0';
-		i++;
-	}
-	return (result * sign);
 }

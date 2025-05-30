@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:19:39 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/26 09:25:37 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/30 16:00:44 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ static t_list	*split_it(t_list **list, char **argv)
 	int		data;
 
 	tmp_array = ft_split(argv[1], ' ');
-	data = ft_atoi(tmp_array[0]);
+	data = ft_atol(tmp_array[0]);
 	*list = ft_new_node(data);
 	current = *list;
 	i = 1;
 	while (tmp_array[i])
 	{
-		data = ft_atoi(tmp_array[i]);
+		data = ft_atol(tmp_array[i]);
 		current = ft_new_node(data);
 		ft_lstadd_back(list, current);
 		i++;
@@ -88,12 +88,12 @@ static t_list	*get_input(t_list **list, char *tab[], int i)
 	int		j;
 
 	j = 1;
-	data = ft_atoi(tab[j]);
+	data = ft_atol(tab[j]);
 	*list = ft_new_node(data);
 	current = *list;
 	while (j++ < i)
 	{
-		data = ft_atoi(tab[j]);
+		data = ft_atol(tab[j]);
 		current = ft_new_node(data);
 		ft_lstadd_back(list, current);
 	}
