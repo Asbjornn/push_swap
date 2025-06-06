@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 14:07:25 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/06 15:57:22 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/05/30 16:57:36 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static char	*read_lines(int fd, char *stash)
 			return (NULL);
 		}
 		buffer[bytes] = '\0';
-		tmp = ft_strjoin(stash, buffer);
+		tmp = ft_strjoin_gnl(stash, buffer);
 		stash = tmp;
 	}
 	free(buffer);

@@ -6,11 +6,15 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 15:52:02 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/30 15:55:39 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/06 15:28:37 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*							CHECK IF DOUBLE IN INPUT						*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static int	check_double(char **tab)
 {
@@ -31,6 +35,10 @@ static int	check_double(char **tab)
 	}
 	return (0);
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*								CHECK IF ONLY DIGIT							*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static int	check_digit(char *str)
 {
@@ -53,6 +61,12 @@ static int	check_digit(char *str)
 	}
 	return (1);
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*								HANDLE ERRORS INPUT							*/
+/*			check all input: 												*/
+/* 			if not a digit, out of int limit or if there is double			*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 int	handle_error(int argc, char **argv)
 {

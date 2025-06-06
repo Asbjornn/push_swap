@@ -6,11 +6,16 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 19:51:22 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/26 14:54:18 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/06 15:35:17 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*							CHECK IS SORTED									*/
+/*				go through the stack to check if is sorted					*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static int	is_sorted(t_list *list)
 {
@@ -24,6 +29,11 @@ static int	is_sorted(t_list *list)
 	}
 	return (1);
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*								GET MAX BIT									*/
+/*			take the biggest index and count how many bit it has			*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static int	max_bit(t_list *list)
 {
@@ -45,6 +55,11 @@ static int	max_bit(t_list *list)
 	}
 	return (limit);
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*							RADIX BITWISE ALGO								*/
+/*					compare the bit and push on b if it's 0					*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 void	radix_bitwise(t_list **list_a, t_list **list_b)
 {
@@ -77,7 +92,7 @@ void	radix_bitwise(t_list **list_a, t_list **list_b)
 
 /*
 RADIX BITWISE
-Si le bit est a 1, je ra
 Si le bit est a 0, je pb
+Si le bit est a 1, je ra
 puis je pa tout le reste
 */

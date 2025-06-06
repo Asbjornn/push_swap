@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 13:15:18 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/26 09:31:31 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/06 15:38:38 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@
 // 		if (!(*list_b)->next || pos == -1)
 // 			break ;
 // 		while ((*list_b)->index != (i - j - 1)
-//			&& (*list_b)->index != (i - j - 1) - 1)
+// 			&& (*list_b)->index != (i - j - 1) - 1)
 // 		{
 // 			if (pos >= half_size)
 // 				ft_rrb(list_b);

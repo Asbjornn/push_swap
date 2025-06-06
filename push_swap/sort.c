@@ -6,11 +6,16 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:29:46 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/26 14:55:04 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/06 15:34:31 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*								IS SORTED ?									*/
+/*			go through the list and see if it's already sorted				*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static int	is_list_sorted(t_list *list)
 {
@@ -26,6 +31,10 @@ static int	is_list_sorted(t_list *list)
 	}
 	return (1);
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*								SORT 3 ELEMENTS								*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static void	sort3(t_list **list)
 {
@@ -53,6 +62,10 @@ static void	sort3(t_list **list)
 		ft_rra(list);
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*								SORT 4 ELEMENTS								*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 static void	sort4(t_list **list_a, t_list **list_b)
 {
 	t_list	*current;
@@ -75,6 +88,10 @@ static void	sort4(t_list **list_a, t_list **list_b)
 	sort3(list_a);
 	ft_pa(list_b, list_a);
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*								SORT 5 ELEMENTS								*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static void	sort5(t_list **list_a, t_list **list_b)
 {
@@ -100,6 +117,10 @@ static void	sort5(t_list **list_a, t_list **list_b)
 	sort4(list_a, list_b);
 	ft_pa(list_b, list_a);
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*				USE THE BEST SORT FOR THE NUMBER OF ELEMENT					*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 void	sort(t_list **list_a, t_list **list_b)
 {

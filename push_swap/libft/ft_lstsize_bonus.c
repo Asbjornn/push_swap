@@ -6,15 +6,15 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 12:39:59 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/04/21 12:40:02 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/06 15:34:59 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize_b(t_list_ *lst)
 {
-	t_list	*current;
+	t_list_	*current;
 	int		size;
 
 	current = lst;

@@ -6,12 +6,11 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:19:39 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/05/30 16:00:44 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/06 15:28:52 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-#include "ft_printf.h"
 
 // static void	display_list(t_list *list_a, t_list *list_b)
 // {
@@ -34,6 +33,11 @@
 // 	}
 // 	ft_printf("_ _\na b\n");
 // }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*								SPLIT ARGUMENT								*/
+/*			if only 2 argv, split and fill the chained list with			*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static t_list	*split_it(t_list **list, char **argv)
 {
@@ -59,6 +63,11 @@ static t_list	*split_it(t_list **list, char **argv)
 	return (*list);
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*									SET INDEX								*/
+/*						set the index of all the values						*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 static void	set_index(t_list **list)
 {
 	t_list	*current;
@@ -81,6 +90,11 @@ static void	set_index(t_list **list)
 	}
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*								GET THE INPUT								*/
+/*					take all input and put in the chained list				*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 static t_list	*get_input(t_list **list, char *tab[], int i)
 {
 	t_list	*current;
@@ -100,6 +114,10 @@ static t_list	*get_input(t_list **list, char *tab[], int i)
 	current->next = NULL;
 	return (*list);
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*									MAIN									*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 int	main(int argc, char *argv[])
 {

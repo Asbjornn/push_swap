@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static void	free_all(t_list *new_list, void (*del)(void *))
+static void	free_all(t_list_ *new_list, void (*del)(void *))
 {
-	t_list	*temp;
+	t_list_	*temp;
 
 	while (new_list)
 	{
@@ -25,10 +25,10 @@ static void	free_all(t_list *new_list, void (*del)(void *))
 	}
 }
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list_	*ft_lstmap_b(t_list_ *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_list;
-	t_list	*new_elem;
+	t_list_	*new_list;
+	t_list_	*new_elem;
 	void	*new_content;
 
 	if (!lst || !f || !del)
