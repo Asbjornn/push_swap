@@ -2,6 +2,7 @@ CC		= gcc
 CFLAGS 	= -Wall -Wextra -Werror -g
 
 NAME		= push_swap
+
 INCS_DIR    = include
 LIBFT_DIR	= libft
 PRINTF_DIR	= libft/printf
