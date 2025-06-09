@@ -6,15 +6,15 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 19:51:22 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/06/06 15:35:17 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/09 20:27:50 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*							CHECK IS SORTED									*/
-/*				go through the stack to check if is sorted					*/
+/*                           CHECK IS SORTED                                */
+/*              go through the stack to check if is sorted                  */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static int	is_sorted(t_list *list)
@@ -31,8 +31,8 @@ static int	is_sorted(t_list *list)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*								GET MAX BIT									*/
-/*			take the biggest index and count how many bit it has			*/
+/*                              GET MAX BIT                                 */
+/*          take the biggest index and count how many bit it has            */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static int	max_bit(t_list *list)
@@ -57,8 +57,8 @@ static int	max_bit(t_list *list)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*							RADIX BITWISE ALGO								*/
-/*					compare the bit and push on b if it's 0					*/
+/*                            RADIX BITWISE ALGO                            */
+/*                  compare the bit and push on b if it's 0                 */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 void	radix_bitwise(t_list **list_a, t_list **list_b)

@@ -6,15 +6,15 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 11:44:24 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/06/06 15:29:01 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/09 20:26:11 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*									ROTATE									*/
-/*						first element become the last						*/
+/*                                  ROTATE                                  */
+/*                      first element become the last                       */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static	void	ft_rotate(t_list **src)

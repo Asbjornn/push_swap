@@ -6,15 +6,15 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 14:01:59 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/06/06 15:28:28 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/09 20:22:25 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*								WHEEL SORT									*/
-/*				push everything in the current chunk to B					*/
+/*                            WHEEL SORT                                    */
+/*             push everything in the current chunk to B                    */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static void	wheel_sort(t_list **list_a, t_list **list_b, int min, int max)
@@ -32,8 +32,8 @@ static void	wheel_sort(t_list **list_a, t_list **list_b, int min, int max)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*								FIND FUNCTIONS								*/
-/*						find the i index in the stack						*/
+/*                             FIND FUNCTIONS                               */
+/*                      find the i index in the stack                       */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static int	find(t_list *list, int i)
@@ -52,8 +52,8 @@ static int	find(t_list *list, int i)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*								DOUBLE PUSH									*/
-/*						push the biggest and biggest -1						*/
+/*                               DOUBLE PUSH                                */
+/*                      push the biggest and biggest -1                     */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static void	double_push(t_list **list_a, t_list **list_b, int i)
@@ -76,8 +76,8 @@ static void	double_push(t_list **list_a, t_list **list_b, int i)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*								WHEEL SORT B								*/
-/*					push eveything from A to B, big to small				*/
+/*                              WHEEL SORT B                                */
+/*                  push eveything from A to B, big to small                */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static void	wheel_sort_b(t_list **list_a, t_list **list_b)
@@ -110,10 +110,10 @@ static void	wheel_sort_b(t_list **list_a, t_list **list_b)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*								CHUNK SORT									*/
-/*				divide the elemets in 5 chunks, 0-19, 20-39 ...				*/
-/*				push chunk by chunk in B with wheel sort					*/
-/*				wheel sort everything to A									*/
+/*                              CHUNK SORT                                  */
+/*              divide the elemets in 5 chunks, 0-19, 20-39 ...             */
+/*              push chunk by chunk in B with wheel sort                    */
+/*              wheel sort everything to A                                  */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 void	chunk_sort(t_list **list_a, t_list **list_b)

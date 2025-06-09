@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:19:39 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/06/06 15:28:52 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/09 20:25:24 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@
 // }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*								SPLIT ARGUMENT								*/
-/*			if only 2 argv, split and fill the chained list with			*/
+/*                              SPLIT ARGUMENT                              */
+/*          if only 2 argv, split and fill the chained list with            */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static t_list	*split_it(t_list **list, char **argv)
@@ -64,8 +64,8 @@ static t_list	*split_it(t_list **list, char **argv)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*									SET INDEX								*/
-/*						set the index of all the values						*/
+/*                                  SET INDEX                               */
+/*                      set the index of all the values                     */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static void	set_index(t_list **list)
@@ -91,8 +91,8 @@ static void	set_index(t_list **list)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*								GET THE INPUT								*/
-/*					take all input and put in the chained list				*/
+/*                              GET THE INPUT                               */
+/*                  take all input and put in the chained list              */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static t_list	*get_input(t_list **list, char *tab[], int i)
@@ -116,7 +116,7 @@ static t_list	*get_input(t_list **list, char *tab[], int i)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*									MAIN									*/
+/*                                  MAIN                                    */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 int	main(int argc, char *argv[])

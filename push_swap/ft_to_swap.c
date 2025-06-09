@@ -6,15 +6,15 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 11:14:27 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/06/06 15:29:21 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/09 20:26:35 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*									SWAP									*/
-/*					swap the first two element on a stack					*/
+/*                                  SWAP                                    */
+/*                  swap the first two element on a stack                   */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static	void	swap(t_list **list)
