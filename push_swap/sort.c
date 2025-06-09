@@ -13,8 +13,8 @@
 #include "ft_push_swap.h"
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*								IS SORTED ?									*/
-/*			go through the list and see if it's already sorted				*/
+/*                               IS SORTED ?                                */
+/*           go through the list and see if it's already sorted             */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static int	is_list_sorted(t_list *list)
@@ -33,7 +33,7 @@ static int	is_list_sorted(t_list *list)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*								SORT 3 ELEMENTS								*/
+/*                               SORT 3 ELEMENTS                            */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static void	sort3(t_list **list)
@@ -63,7 +63,7 @@ static void	sort3(t_list **list)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*								SORT 4 ELEMENTS								*/
+/*                              SORT 4 ELEMENTS                             */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static void	sort4(t_list **list_a, t_list **list_b)
@@ -90,7 +90,7 @@ static void	sort4(t_list **list_a, t_list **list_b)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*								SORT 5 ELEMENTS								*/
+/*                             SORT 5 ELEMENTS                              */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 static void	sort5(t_list **list_a, t_list **list_b)
@@ -119,7 +119,7 @@ static void	sort5(t_list **list_a, t_list **list_b)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*				USE THE BEST SORT FOR THE NUMBER OF ELEMENT					*/
+/*             USE THE BEST SORT FOR THE NUMBER OF ELEMENT                  */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 void	sort(t_list **list_a, t_list **list_b)
