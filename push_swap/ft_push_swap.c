@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:19:39 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/06/09 20:25:24 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/13 11:21:29 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,8 @@ int	main(int argc, char *argv[])
 	t_list	*list_a;
 	t_list	*list_b;
 
+	if (argc == 1)
+		return (0);
 	if (argc < 2 || !handle_error(argc, argv))
 	{
 		ft_putstr_fd("Error\n", 2);
