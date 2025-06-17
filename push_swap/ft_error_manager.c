@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 15:52:02 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/06/09 20:23:30 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/17 12:36:57 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,17 +68,42 @@ static int	check_digit(char *str)
 /*          if not a digit, out of int limit or if there is double          */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-int	handle_error(int argc, char **argv)
+int	handle_error_split(char **argv)
+{
+	int			i;
+	long int	temp;
+	char		**temp_argv;
+	int			result;
+
+	i = 0;
+	result = 1;
+	temp_argv = ft_split(argv[1], ' ');
+	while (temp_argv[i])
+	{
+		if (!check_digit(temp_argv[i]))
+			result = 0;
+		temp = ft_atol(temp_argv[i]);
+		if (temp > INT_MAX || temp < INT_MIN)
+			result = 0;
+		i++;
+	}
+	if (check_double(temp_argv))
+		result = 0;
+	free_all(temp_argv);
+	if (result)
+		return (1);
+	else
+		return (0);
+}
+
+int	handle_error(char **argv)
 {
 	int			i;
 	long int	temp;
 	char		**temp_argv;
 
 	i = 0;
-	if (argc == 2)
-		temp_argv = ft_split(argv[1], ' ');
-	else
-		temp_argv = argv + 1;
+	temp_argv = argv + 1;
 	if (!temp_argv[i])
 		return (0);
 	while (temp_argv[i])
@@ -92,7 +117,5 @@ int	handle_error(int argc, char **argv)
 	}
 	if (check_double(temp_argv))
 		return (0);
-	if (argc == 2)
-		free_all(temp_argv);
 	return (1);
 }

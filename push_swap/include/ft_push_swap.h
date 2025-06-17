@@ -6,7 +6,7 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:37:32 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/06/11 11:11:10 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/17 12:37:06 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ void		chunk_sort(t_list **list_a, t_list **list_b);
 
 long int	ft_atol(const char *nptr);
 char		**ft_split(char const *s, char c);
-int			handle_error(int argc, char **tab);
+int			handle_error(char **tab);
+int			handle_error_split(char **argv);
 void		ft_putstr_fd(char *s, int fd);
 void		free_all(char **tab);
 void		free_list(t_list **list_a);
