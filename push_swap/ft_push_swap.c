@@ -6,33 +6,11 @@
 /*   By: gcauchy <gcauchy@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 12:19:39 by gcauchy           #+#    #+#             */
-/*   Updated: 2025/06/13 11:21:29 by gcauchy          ###   ########.fr       */
+/*   Updated: 2025/06/17 10:11:02 by gcauchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
-// static void	display_list(t_list *list_a, t_list *list_b)
-// {
-// 	while (list_a != NULL)
-// 	{
-// 		ft_printf("index :%d      %d", list_a->index, list_a->data);
-// 		if (list_b != NULL)
-// 		{
-// 			ft_printf(" list_b :%d\n", list_b->data);
-// 			list_b = list_b->next;
-// 		}
-// 		else
-// 			ft_printf("\n");
-// 		list_a = list_a->next;
-// 	}
-// 	while (list_b != NULL)
-// 	{
-// 		ft_printf(" list_b :%d\n", list_b->data);
-// 		list_b = list_b->next;
-// 	}
-// 	ft_printf("_ _\na b\n");
-// }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*                              SPLIT ARGUMENT                              */
@@ -138,7 +116,28 @@ int	main(int argc, char *argv[])
 	set_index(&list_a);
 	list_b = NULL;
 	sort(&list_a, &list_b);
-	// display_list(list_a, list_b);
 	free_list(&list_a);
 	return (0);
 }
+
+/*static void	display_list(t_list *list_a, t_list *list_b)
+{
+	while (list_a != NULL)
+	{
+		ft_printf("index :%d      %d", list_a->index, list_a->data);
+		if (list_b != NULL)
+		{
+			ft_printf(" list_b :%d\n", list_b->data);
+			list_b = list_b->next;
+		}
+		else
+			ft_printf("\n");
+		list_a = list_a->next;
+	}
+	while (list_b != NULL)
+	{
+		ft_printf(" list_b :%d\n", list_b->data);
+		list_b = list_b->next;
+	}
+	ft_printf("_ _\na b\n");
+}*/
