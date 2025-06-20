@@ -15,7 +15,7 @@ SRCS    	=	ft_push_swap.c ft_push_list.c ft_to_rotate.c ft_to_reverse_rotate.c\
 				ft_to_swap.c ft_error_manager.c chunk_sort.c sort.c radix_bitwise.c
 SRCS_UTILS	=	utils/ft_free.c utils/ft_list.c utils/ft_atol.c
 
-BLUE=\033[0;94m
+BLUE=\033[1;34m
 GREEN=\033[1;92m
 
 OBJ    = $(patsubst %.c,file_o/%.o,$(SRCS) $(SRCS_UTILS))
@@ -30,18 +30,16 @@ file_o/%.o: %.c | $(DIR_O)
 	@${CC} ${CFLAGS} -I ${INCS_DIR} -c $< -o $@
 
 ${NAME}: ${OBJ}
-	@${MAKE} -C ${LIBFT_DIR}
 	@${CC} ${CFLAGS} ${OBJ} ${LIBFT_A} ${PRINFT_A} -o ${NAME}
 	@echo -e "${GREEN}COMPILATION SUCEED"
 
 clean:
 	@rm -rf $(DIR_O)
-	@${MAKE} -C ${LIBFT_DIR} clean
-	@echo -e "${GREEN}ALL IS CLEAN"
+	@echo -e "${BLUE}FILE.o IS CLEAN"
 
 fclean: clean
 	@rm -f ${NAME}
-	@${MAKE} -C ${LIBFT_DIR} fclean
+	@echo -e "${BLUE}EXEC IS CLEAN"
 
 re: fclean all
 
